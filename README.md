@@ -100,6 +100,8 @@ application.properties → Configuraçōes do aplicativo (como senha do banco de
 
 
 🔄 Fluxo de Operações
+
+
 Criação de Conta
 Recebe dados do titular e saldo inicial via POST
 
