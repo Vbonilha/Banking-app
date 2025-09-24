@@ -25,31 +25,54 @@ Consulta de transações: Visualizar todo o histórico de movimentações de uma
 Ordenação por data: Transações listadas da mais recente para a mais antiga
 
 🏗️ Estrutura do Projeto
-text
-banking-app/
-├── src/main/java/net/vbonilha/banking_app/
-│   ├── BankingAppApplication.java          # Classe principal da aplicação
-│   ├── controller/
-│   │   └── AccountController.java          # Endpoints REST da API
-│   ├── dto/
-│   │   ├── AccountDto.java                 # Objeto de transferência para Contas
-│   │   ├── TransactionDto.java             # Objeto de transferência para Transações
-│   │   └── TransferFundDto.java            # DTO para transferências entre contas
-│   ├── entity/
-│   │   ├── Account.java                    # Entidade JPA da Conta
-│   │   └── Transaction.java                # Entidade JPA da Transação
-│   ├── exception/
-│   │   ├── AccountException.java           # Exceção personalizada para contas
-│   │   ├── ErrorDetails.java               # Detalhes padronizados de erro
-│   │   └── GlobalExceptionHandler.java     # Manipulador global de exceções
-│   ├── mapper/
-│   │   └── AccountMapper.java              # Conversor entre Entity e DTO
-│   └── repository/
-│       ├── AccountRepository.java          # Interface de acesso a dados das contas
-│       └── TransactionRepository.java      # Interface de acesso a dados das transações
-├── src/main/resources/
-│   └── application.properties              # Configurações da aplicação
-└── pom.xml                                 # Dependências Maven
+
+PASTA PRINCIPAL (banking-app)
+
+pom.xml → Lista de ferramentas e bibliotecas que o projeto precisa para funcionar
+
+PASTA DE CÓDIGO (src/main/java/net/vbonilha/banking_app/)
+
+BankingAppApplication.java → Motor principal que inicia o aplicativo bancário
+
+PASTA CONTROLLER (controller)
+
+AccountController.java → Recebe as solicitações dos usuários (como criar conta ou fazer transferências)
+
+PASTA DTO (dto) → Formulários padrão para organizar os dados que entram e saem do sistema:
+
+AccountDto.java → Formulário de dados da conta bancária
+
+TransactionDto.java → Formulário de dados de transações
+
+TransferFundDto.java → Formulário específico para transferências
+
+PASTA ENTITY (entity) → Tabelas do banco de dados em formato Java:
+
+Account.java → Modelo de como uma conta bancária é armazenada
+
+Transaction.java → Modelo de como uma transação é armazenada
+
+PASTA EXCEPTION (exception) → Gerenciamento de erros:
+
+AccountException.java → Erros específicos da conta
+
+ErrorDetails.java → Modelo de como os erros são exibidos
+
+GlobalExceptionHandler.java → Central de tratamento de erros
+
+PASTA MAPPER (mapper)
+
+AccountMapper.java → Tradutor que converte dados entre diferentes formatos
+
+PASTA REPOSITORY (repository) → Armazenamento de dados:
+
+AccountRepository.java → Operaçōes de salvar/buscar contas
+
+TransactionRepository.java → Operaçōes com transações
+
+PASTA DE CONFIGURAÇÕES (src/main/resources)
+
+application.properties → Configuraçōes do aplicativo (como senha do banco de dados)
 🔄 Fluxo de Operações
 Criação de Conta
 Recebe dados do titular e saldo inicial via POST
