@@ -39,6 +39,8 @@ banking-app/
     ├── exception/ (Gerenciamento de erros)
     ├── mapper/ (Conversão de dados)
     └── repository/ (Armazenamento de dados)
+
+    
 🔄 Fluxo de Operações
 
 Criação de Conta
