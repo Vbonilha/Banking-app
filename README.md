@@ -135,7 +135,7 @@ Configure o banco de dados MySQL
 sql
 -- Conecte-se ao MySQL como root ou usuário com privilégios
 CREATE DATABASE banking_app;
-CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_username';
+CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_password';
 GRANT ALL PRIVILEGES ON banking_app.* TO 'your_username'@'localhost';
 FLUSH PRIVILEGES;
 Configure a aplicação
